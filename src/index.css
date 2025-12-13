@@ -1,0 +1,31 @@
+@charset "UTF-8";  /* MUST be first line */
+
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* Slick carousel default styles */
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+/* Import Tailwind */
+@import "tailwindcss";
+
+/* Theme variables */
+@theme {
+  --color-primary: #FF4D6D;
+  --color-secondary: #1e1e1e;
+  --color-secondary-bg: #f7f7f7;
+  --font-primary: "Poppins", sans-serif;
+}
+
+/* Tailwind Layer Customization */
+@layer base {
+  body {
+    font-family: var(--font-primary);
+  }
+}
+
+/* Custom Classes */
+.section-container {
+  @apply max-w-screen-2xl mx-auto container px-4 py-6;
+}
