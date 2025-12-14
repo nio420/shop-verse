@@ -83,7 +83,7 @@ const Footer = () => {
             Contact Us
           </h3>
           <p>Email: support@shop-verse.com</p>
-          <p>Phone: +880 1688 751619</p>
+          <p>Phone: +88098927408</p>
           <p>Address: Dhaka, Bangladesh</p>
         </div>
       </div>

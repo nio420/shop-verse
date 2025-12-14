@@ -1,16 +1,24 @@
-import React from "react";
-import AppImg from "../assets/App.png"
+import AppImg from "../assets/App.png";
 
 const AppPromo = () => {
   return (
     <section className="w-full py-16 bg-white">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          {/* RIGHT: IMAGE */}
+          <div className="flex justify-center">
+            <img
+              src={AppImg}
+              alt="E-commerce App"
+              className="w-72 md:w-96 h-auto rounded-2xl shadow-xl"
+            />
+          </div>
 
           {/* LEFT: TEXT */}
           <div className="text-center md:text-left">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Shop Faster with Our <span className="text-primary">Mobile App</span>
+              Shop Faster with Our{" "}
+              <span className="text-primary">Mobile App</span>
             </h2>
 
             <p className="text-gray-600 text-lg mb-8">
@@ -27,16 +35,6 @@ const AppPromo = () => {
               </button>
             </div>
           </div>
-
-          {/* RIGHT: IMAGE */}
-          <div className="flex justify-center">
-            <img
-              src={AppImg}
-              alt="E-commerce App"
-              className="w-72 md:w-96 h-auto rounded-2xl shadow-xl"
-            />
-          </div>
-
         </div>
       </div>
     </section>
