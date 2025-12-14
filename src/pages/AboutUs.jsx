@@ -1,8 +1,10 @@
 import aboutImg from "../assets/about.avif";
+import HowItWorks from "../components/HowItWorks";
+import Footer from "../components/Footer";
 
 const AboutUs = () => {
   return (
-    <section className="w-full py-28 bg-gray-50">
+    <section className="w-full py-28  bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col md:flex-row items-center gap-12">
         {/* Left Image */}
         <div className="md:w-1/2">
@@ -30,11 +32,13 @@ const AboutUs = () => {
             of happy shoppers and experience hassle-free shopping with fast
             delivery and secure payments.
           </p>
-          <button className="bg-primary text-white py-2 px-6 rounded-lg font-medium hover:bg-primary/85 transition-all duration-300 cursor-pointer">
+          <button className="bg-primary text-white py-2 px-6 rounded-lg font-medium hover:bg-primary/85 transition-all duration-300 cursor-pointer mb-6">
             Learn More
           </button>
         </div>
       </div>
+      <HowItWorks />
+      <Footer />
     </section>
   );
 };

@@ -9,7 +9,7 @@ const Footer = () => {
     });
   };
   return (
-    <footer className="w-full bg-white text-gray-900 border-t border-gray-200 py-10">
+    <footer className="w-full bg-white text-gray-900 border-t border-gray-200 py-10 -mb-26">
       <div className="max-w-screen-2xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between gap-8">
         {/* Logo & Description */}
         <div className="flex flex-col gap-4">
@@ -94,7 +94,7 @@ const Footer = () => {
             All Rights Reserved. ©{new Date().getFullYear()} Shop-Verse.
         </p>
         <p className="mt-2 text-sm -mb-5">
-          Developed by <span className="text-amber-600">Omit</span>
+          Developed by <span className="text-primary">Omit</span>
         </p>
       </div>
     </footer>

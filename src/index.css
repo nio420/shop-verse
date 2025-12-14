@@ -1,4 +1,4 @@
-@charset "UTF-8";  /* MUST be first line */
+@charset "UTF-8"; /* MUST be first line */
 
 /* Google Font */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
@@ -12,7 +12,7 @@
 
 /* Theme variables */
 @theme {
-  --color-primary: #FF4D6D;
+  --color-primary: #ff4d6d;
   --color-secondary: #1e1e1e;
   --color-secondary-bg: #f7f7f7;
   --font-primary: "Poppins", sans-serif;
@@ -26,6 +26,38 @@
 }
 
 /* Custom Classes */
-.section-container {
-  @apply max-w-screen-2xl mx-auto container px-4 py-6;
+.swiper-button-prev,
+.swiper-button-next {
+  @apply px-4 py-2 ring-1 ring-primary rounded-full bg-white text-gray-900 text-base;
+}
+
+.swiper-button-prev {
+  left: -40px; /* push left button outside the card */
+}
+
+.swiper-button-next {
+  right: -40px; /* push right button outside the card */
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  @apply bg-primary text-white;
+}
+/* Move pagination bullets lower, create space from top of card container */
+.swiper-pagination {
+  top: 100%; /* place below the card */
+  margin-top: 20px; /* adjust spacing from the card */
+  position: relative; /* make sure top & margin work */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #ff4d6d; /* primary color */
+  transform: scale(1.2); /* slightly bigger active bullet */
+}
+
+.swiper-slide > div {
+  min-height: 300px; /* adjust based on your content */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* keeps content top aligned */
 }

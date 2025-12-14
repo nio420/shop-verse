@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FaRegUser, FaShoppingCart } from "react-icons/fa"; // for cart icon
 import { HiMenu, HiX } from "react-icons/hi";
 import { Link, NavLink } from "react-router-dom";
@@ -43,16 +43,38 @@ const NavItems = () => {
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [isScroll, setIsScroll] = useState(false);
   const { quantity } = useContext(ShopContext);
 
+  // Scroll effect for navbar background
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScroll(true);
+      } else {
+        setIsScroll(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="w-full bg-white shadow-md fixed top-0 left-0 z-50">
+    <nav
+      className={`w-full z-50 transition-all duration-300 ${
+        isScroll
+          ? "fixed top-0 left-0 bg-white text-gray-800 shadow-md"
+          : "absolute top-0 left-0 bg-transparent text-white"
+      }`}
+    >
       <div className="max-w-screen-2xl mx-auto flex items-center justify-between p-4 md:px-8">
         {/* Logo */}
         <div>
           <Link to="/">
-            <h2 className="text-2xl md:text-2xl font-bold text-primary cursor-pointer hover:text-primary/80 transition-all duration-200"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+            <h2
+              className="text-2xl md:text-2xl font-bold text-primary cursor-pointer hover:text-primary/80 transition-all duration-200"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
               Shop-Verse
             </h2>
           </Link>
@@ -72,7 +94,11 @@ const Navbar = () => {
             </button>
           </Link>
           {/* user icon */}
-          <FaRegUser className="text-xl md:text-2xl cursor-pointer mb-2 md:mr-1.5" />
+          <FaRegUser
+            className={`text-xl md:text-2xl cursor-pointer mb-2 md:mr-1.5 ${
+              isScroll ? "text-gray-800" : "text-gray-800"
+            }`}
+          />
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">

@@ -1,5 +1,7 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
+import Newsletter from "../components/Newsletter";
+import Footer from "../components/Footer";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -20,6 +22,7 @@ const Contact = () => {
   };
 
   return (
+    <>  
     <section className="w-full py-28 bg-linear-to-r from-purple-100 via-pink-100 to-yellow-100">
       <div className="max-w-4xl mx-auto px-6 md:px-10">
         {/* Title */}
@@ -67,13 +70,16 @@ const Contact = () => {
 
           <button
             type="submit"
-            className="w-full bg-primary text-white py-3 rounded-lg font-medium hover:bg-primary/85 transition-all duration-300"
+            className="w-full bg-primary text-white py-3 rounded-lg font-medium hover:bg-primary/85 transition-all duration-300 cursor-pointer"
           >
             Send Message
           </button>
         </form>
       </div>
     </section>
+    <Newsletter className="mb-0" />
+    <Footer />
+    </>
   );
 };
 

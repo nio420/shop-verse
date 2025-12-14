@@ -1,7 +1,7 @@
 import React from "react";
 import toast from "react-hot-toast";
 
-const Newsletter = () => {
+const Newsletter = ({className}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     toast.success("Subscribed successfully!");
@@ -9,7 +9,7 @@ const Newsletter = () => {
   };
 
   return (
-    <section className="w-full py-16 bg-gray-50">
+    <section className={`w-full py-16  bg-gray-50 ${className}`}>
       <div className="max-w-4xl mx-auto px-6 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
           Stay Updated with Our <span className="text-primary">Newsletter</span>
